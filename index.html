@@ -1,0 +1,57 @@
+<!DOCTYPE html> <!-- The basic html declaration. -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta 
+			name="viewport"
+			width=device-width
+			initial-scale=1.0
+			maximum-scale=1.0
+			user-scalable=0>
+
+		<title>Professor Oak's Realm</title>
+
+		<!-- These javascript libraries allow the usage of the p5.js framework -->
+		<!-- <script type="text/javascript" src="libraries/p5.js"></script> -->
+   		<!-- <script type="text/javascript" src="libraries/p5.dom.js"></script> -->
+
+   		<!-- Our stylesheets -->
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<audio controls preload="auto" autoplay loop>
+			<source id="audio" type="audio/mpeg" src="sounds/oak-research-lab.mp3">
+		</Audio>
+		<h1 id="IntroHead">Professor Oak's Realm</h1>
+		<p id="Intro">"Hello there!
+			<br>
+			Welcome to the world of Pokémon! My name is Oak! People call me the Pokémon Prof!
+			<br>
+			This world is inhabited by creatures called Pokémon!
+			<br>
+			For some people, Pokémon are pets. Other use them for fights. 
+			<br>
+			Myself… I study Pokémon as a profession.
+			<br>
+			First, what is your name?"</p>
+
+		<div id="OakStuff">
+			<img src=
+				"https://1.bp.blogspot.com/-nLQeARbkCiM/WSWux9e-15I/AAAAAAAAB7U/F5ZZc5qa_agJX1yqW2TkHe97_C6wGC6agCLcB/s1600/Profesor_Oak_%2528serie_original%2529.png">
+			</img>
+			<input class="text" type="text" id="BoyOrGirl" value="Enter a name here..."/>
+			<input class="button" type="button" value="Send" onClick="getNameGender()"/>
+		</div>
+
+		<!-- Script containing website behaviors -->
+		<script type="text/javascript" src="Project1.js"></script>
+
+		<div id="OakResponse">
+			<h1 id="name"></h1>
+			<p id="gender"></p>
+			<p id="probability"></p>
+		</div>
+	</body>
+</html>
