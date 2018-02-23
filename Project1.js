@@ -26,6 +26,7 @@ function httpGetAsync(theUrl, callback) {
 // Analyzes the data of the JSON response, then sets the webpage text
 function assignGender(data) {
 	let dataJSON = JSON.parse(data);
+	let error = false;
 	console.log(dataJSON);
 	gender = dataJSON.gender;
 	probability = dataJSON.probability;
@@ -36,13 +37,22 @@ function assignGender(data) {
 		probability = probability * 100;
 	}
 
-	setText(name, gender, probability);
+	if(gender == "null" && probability == NaN) {
+		error = true;
+	}
+
+	setText(name, gender, probability, error);
 }
 
-function setText(name, gender, probability) {
+function setText(name, gender, probability, error) {
 	let nameString = "Right! So your name is " + name + "!";
 	let genderString = "I believe that you are a " + gender + ", correct?";
 	let probabilityString = "I'm about " + probability + "% certain.";
+
+	if(error) {
+		genderString = "I haven't heard that name before.";
+		probabilityString = "Are you a boy or a girl?";
+	}
 
 	// Makes the element visible
 	document.getElementById("OakResponse").style.padding = "65pt";
