@@ -37,7 +37,7 @@ function assignGender(data) {
 		probability = probability * 100;
 	}
 
-	if(gender == "null" && probability == NaN) {
+	if(gender == null && probability == NaN) {
 		error = true;
 	}
 
